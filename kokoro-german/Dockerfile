@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.12-slim-bookworm
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget curl espeak-ng libsndfile1 jq \
@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir \
     wyoming-openai==0.6.1 \
     pysbd
 
-ENV PYTHONPATH="/app:$PYTHONPATH"
+ENV PYTHONPATH="/app"
 
 COPY german_text_rules.py /app/german_text_rules.py
 COPY tts_normalizer.py /app/tts_normalizer.py
