@@ -1,0 +1,23 @@
+name: "Wyoming Kokoro TTS (German Martin)"
+slug: "kokoro_german_tts"
+version: "1.2.0"
+description: "High-quality local German Kokoro TTS (voice Martin) with Wyoming protocol support for Home Assistant Voice Assist"
+url: "https://github.com/Godelaune/Kokoro-82M-ONNX-German-Martin"
+arch:
+  - amd64
+init: false
+host_network: true
+ports:
+  10203/tcp: 10203
+  8881/tcp: 8881
+ports_description:
+  10203/tcp: "Wyoming Protocol"
+  8881/tcp: "FastAPI OpenAI TTS endpoint"
+discovery:
+  - wyoming
+options:
+  kokoro_workers: 2
+  speed: 1.125
+schema:
+  kokoro_workers: int
+  speed: float
